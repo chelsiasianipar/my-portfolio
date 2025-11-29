@@ -81,7 +81,7 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
                 Pendidikan
               </a>
             </li>
-            
+            {/* cek */}
             <li>
               <a
                 href="#contact"
