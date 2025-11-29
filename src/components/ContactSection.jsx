@@ -78,11 +78,8 @@ const ContactSection = () => {
     <section id="contact" className="contact-section">
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="section-title">Mari Terhubung</h2>
-          <p className="section-subtitle">
-            Saya selalu terbuka untuk diskusi proyek baru, peluang kolaborasi, atau sekadar mengobrol tentang teknologi. 
-            Jangan ragu untuk menghubungi saya!
-          </p>
+          <h2 className="section-title">Contact Me</h2>
+
         </div>
 
         {/* Contact Info Cards */}

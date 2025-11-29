@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import '../css/HeroSection.css' // pastikan path ini sesuai struktur proyekmu
 
 const HeroSection = ({ scrollToSection }) => {
   const heroRef = useRef(null)
@@ -101,7 +102,7 @@ const HeroSection = ({ scrollToSection }) => {
             <div className="photo-glow"></div>
             <div className="photo-ring"></div>
             <img
-              src="/src/assets/profile.jpg"
+              src="/assets/image/profile.jpg"
               alt="Profile"
               className="profile-photo"
               onError={(e) => {
@@ -111,24 +112,20 @@ const HeroSection = ({ scrollToSection }) => {
             />
             <div className="profile-photo-placeholder" style={{ display: 'none' }}>
               <span>Foto Profil</span>
-              <small>Tempatkan foto Anda di: src/assets/profile.jpg</small>
             </div>
           </div>
           <h1 className="home-title fade-in">
-            <span className="title-line">Halo, Saya</span>
+            <span className="title-line">Building the future, I'm</span>
             <span className="highlight typing-effect">Felix Natanael Butarbutar</span>
           </h1>
           <p className="home-subtitle fade-in">
             <span className="subtitle-text">Full Stack Developer</span>
-            <span className="subtitle-separator"> & </span>
           </p>
-          <p className="home-description fade-in">
-            Passionate and highly motivated developer with strong technical expertise in modern frameworks and emerging technologies. Experienced in managing the full application development lifecycle from planning and system design to implementation, deployment, and maintenance. Consistently deliver reliable, scalable, and high-quality solutions for both web and mobile platforms.
-          </p>
+
           <div className="home-buttons fade-in">
             <button
               className="btn btn-primary pulse-on-hover"
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection('experience')}
             >
               <span>Lihat Projek</span>
               <div className="btn-ripple"></div>

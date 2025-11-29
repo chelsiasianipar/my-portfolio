@@ -28,7 +28,7 @@ const AboutSection = () => {
 
           {/* LEFT */}
           <div className="about-left">
-            <h3 className="about-title">Tentang Saya</h3>
+            <h3 className="about-title">About Me</h3>
             <p className="about-sub">Developer • Problem solver • System thinker</p>
 
             <div className="about-body">

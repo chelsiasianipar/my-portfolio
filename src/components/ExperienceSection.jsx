@@ -5,7 +5,7 @@ const ExperienceSection = () => {
   const workExperience = {
     badge: "Professional",
     role: "Part-time Web Developer",
-    date: "Aug 2024 – Dec 2024",
+    date: "Aug 2025 – Dec 2025",
     title: "PT LPK Mori Silangit",
     company: "North Sumatra",
     description: "Multilingual company profile with integrated student registration system",
@@ -36,7 +36,7 @@ const ExperienceSection = () => {
     },
     {
       role: "Full Stack Developer",
-      date: "Jan 2024 – Jul 2024",
+      date: "Jan 2025 – Jul 2025",
       title: "IT Del Student Information System",
       company: "Institut Teknologi Del",
       description: "Comprehensive campus information system with 24 features and 4 role-based access levels",
@@ -50,7 +50,7 @@ const ExperienceSection = () => {
     },
     {
       role: "ML Engineer & Full-Stack Developer",
-      date: "Aug 2024 – Dec 2024",
+      date: "Aug 2025 – Dec 2025",
       title: "Student Stress Level Prediction",
       company: "Machine Learning Project",
       description: "Ensemble ML model using 1D-CNN and XGBoost to predict student stress levels",
@@ -92,7 +92,7 @@ const ExperienceSection = () => {
     },
     {
       role: "Business Concept Strategist",
-      date: "Oct 2024 – Dec 2024",
+      date: "Oct 2025 – Dec 2025",
       title: "Toba Essence: Heritage You Can Taste",
       company: "Cultural Tourism Innovation",
       description: "Tourism service concept integrating cultural experiences around Lake Toba",
@@ -123,7 +123,7 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="experience-section">
       <div className="experience-container">
-        <h2 className="section-title">Pengalaman Kerja & Projek</h2>
+        <h2 className="section-title">Work Experience & Project</h2>
 
         {/* Work Experience - Full Width Featured */}
         <div className="work-experience-wrapper">

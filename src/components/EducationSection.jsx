@@ -80,7 +80,7 @@ const EducationSection = () => {
   return (
     <section id="education" className="section education-section" aria-labelledby="education-title">
       <div className="education-container">
-        <h2 id="education-title" className="section-title">Pendidikan</h2>
+        <h2 id="education-title" className="section-title">Education</h2>
 
         <div className="education-grid">
           <div className="timeline-line" aria-hidden />

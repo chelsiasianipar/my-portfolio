@@ -50,8 +50,8 @@ export default function SkillsSection() {
     <section id="skills" className="skills-section" aria-label="Skills">
 
       <div className="skills-container">
-        <h2 className="section-title">Keahlian</h2>
-        <p className="section-sub">Toolbox lengkap — dari low level sampai cloud & product thinking</p>
+        <h2 className="section-title">Skills</h2>
+        <p className="section-sub">Toolbox lengkap dari low level sampai cloud & product thinking</p>
 
         {SKILLS_DATA.map((group) => (
           <article key={group.id} className="skill-panel" tabIndex={0} aria-labelledby={`skill-${group.id}-title`}>

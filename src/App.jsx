@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import './App.css'
 
 // Import components
 import Navbar from './components/Navbar'
@@ -13,7 +12,8 @@ import EducationSection from './components/EducationSection'
 // import OrganizationSection from './components/OrganizationSection'
 // import HighlightsSection from './components/HighlightsSection'
 import ContactSection from './components/ContactSection'
-// import Footer from './components/Footer'
+import CertificateSection from './components/CertificateSection'
+import Footer from './components/Footer'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'gallery', 'projects', 'education', 'organization', 'highlights', 'contact']
+      const sections = ['home', 'about', 'skills', 'experience', 'gallery', 'projects', 'education', 'organization', 'highlights','certificates', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -110,7 +110,8 @@ function App() {
       {/* <OrganizationSection />
       <HighlightsSection /> */}
       <ContactSection />
-      {/* <Footer />  */}
+      <CertificateSection />
+      <Footer /> 
     </div>
   )
 }

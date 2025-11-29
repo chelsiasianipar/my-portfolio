@@ -1,11 +1,15 @@
+import '../css/Navbar.css' // pastikan path ini sesuai struktur proyekmu
+
 const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
   return (
     <>
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo" onClick={() => scrollToSection('home')}>
-            Portfolio
+            <span className="logo-text">Felix Natanael</span>
+            <span className="logo-dot">.</span>
           </div>
+          
           <button
             className={`hamburger ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
@@ -15,9 +19,11 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
             <span></span>
             <span></span>
           </button>
+          
           {isMenuOpen && (
             <div className="menu-overlay" onClick={toggleMenu}></div>
           )}
+          
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li>
               <a
@@ -40,7 +46,7 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
                   scrollToSection('about')
                 }}
               >
-                Tentang
+                About
               </a>
             </li>
             <li>
@@ -52,7 +58,7 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
                   scrollToSection('skills')
                 }}
               >
-                Keahlian
+                Skills
               </a>
             </li>
             <li>
@@ -64,11 +70,9 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
                   scrollToSection('experience')
                 }}
               >
-                Pengalaman & Projek
+                Experience
               </a>
             </li>
-            
-
             <li>
               <a
                 href="#education"
@@ -78,20 +82,31 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
                   scrollToSection('education')
                 }}
               >
-                Pendidikan
+                Education
               </a>
             </li>
-            {/* cek */}
+            <li>
+              <a
+                href="#certificates"
+                className={activeSection === 'certificates' ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection('certificates')
+                }}
+              >
+                Certificate
+              </a>
+            </li>
             <li>
               <a
                 href="#contact"
-                className={activeSection === 'contact' ? 'active' : ''}
+                className={`${activeSection === 'contact' ? 'active' : ''} contact-btn`}
                 onClick={(e) => {
                   e.preventDefault()
                   scrollToSection('contact')
                 }}
               >
-                Kontak
+                Contact
               </a>
             </li>
           </ul>
@@ -101,4 +116,4 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
   )
 }
 
-export default Navbar
+export default Navbar;
