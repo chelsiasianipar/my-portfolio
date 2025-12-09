@@ -2,28 +2,40 @@ import "../css/CertificateSection.css";
 
 const CERTIFICATES = [
   {
-    id: "aws-ml",
-    title: "AWS Certified Machine Learning Specialty 2025",
-    issuer: "Amazon Web Services (AWS)",
+    id: "qa-training-afteroffice", // Diubah agar sesuai dengan konten (bukan aws-ml)
+    title: "Quality Assurance Certified", // Typo "Quss" diperbaiki
+    issuer: "AfterOffice",
     date: "2025",
-    type: "Hands-On Training",
-    description: "Comprehensive training on machine learning services and best practices on AWS platform",
-    skills: ["Machine Learning", "AWS SageMaker", "Deep Learning", "Model Deployment"],
-    logo: "/assets/image/aws-logo.png", // Ganti dengan path logo AWS
-    credentialUrl: "", // Tambahkan URL credential jika ada
-    badge: "Cloud & ML"
+    type: "Intensive Bootcamp",
+    description: "Intensive hands-on training focusing on software testing methodologies, creating comprehensive test cases, executing functional tests, and managing the defect lifecycle to ensure product quality.", 
+    skills: ["Automation Testing", "Test Case Design", "Bug Tracking", "Functional Testing",],
+    logo: "/assets/image/afteroffice-logo.jpeg", 
+    credentialUrl: "", 
+    badge: "Software Testing" 
   },
   {
-    id: "dicoding-c",
-    title: "Memulai Pemrograman Dengan C",
-    issuer: "Dicoding Indonesia",
+    id: "POSTMANT API",
+    title: "Postman API Fundamentals Student Expert certification",
+    issuer: "POSTMAN Academy",
     date: "2025",
     type: "Course Completion",
-    description: "Fundamental programming concepts and C language mastery",
-    skills: ["C Programming", "Data Structures", "Algorithms", "Memory Management"],
-    logo: "/assets/image/dicoding-logo.png", // Ganti dengan path logo Dicoding
-    credentialUrl: "", // Tambahkan URL credential jika ada
+    description: "This is a self-paced course designed for students and beginners to introduce them to the world of APIs (Application Programming Interfaces).",
+    skills: ["API Foundational", "Tool Mastery", "Basic Automation", "Data Handling"],
+    logo: "/assets/image/postman.png", 
+    credentialUrl: "", 
     badge: "Programming"
+  },
+   {
+    id: "qa-training-afteroffice",
+    title: "Quality Assurance Certified",
+    issuer: "AfterOffice",
+    date: "2025",
+    type: "Intensive Bootcamp",
+    description: "A practical bootcamp focused on core QA skills, from API testing to basic automation and essential QA",
+    skills: ["Automation Testing", "Test Case Design", "Basic Automation", "Functional Testing"],
+    logo: "/assets/image/afteroffice-logo.jpeg", 
+    credentialUrl: "", 
+    badge: "Software Testing"
   },
 //   {
 //     id: "cert-3",

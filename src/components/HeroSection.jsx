@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import '../css/HeroSection.css' // pastikan path ini sesuai struktur proyekmu
+import '../css/HeroSection.css' // pastikan path ini sesuai
 
 const HeroSection = ({ scrollToSection }) => {
   const heroRef = useRef(null)
@@ -10,42 +10,40 @@ const HeroSection = ({ scrollToSection }) => {
     const handleMouseMove = (e) => {
       mousePosition.current = { x: e.clientX, y: e.clientY }
 
-      // Update cursor trail
+      // Custom cursor (jika kamu punya .custom-cursor di DOM)
       const cursor = document.querySelector('.custom-cursor')
       if (cursor) {
         cursor.style.left = `${e.clientX}px`
         cursor.style.top = `${e.clientY}px`
       }
 
-      // Parallax effect untuk foto profil
+      // Parallax profile photo
       const profilePhoto = document.querySelector('.profile-photo')
       if (profilePhoto && heroRef.current) {
         const rect = heroRef.current.getBoundingClientRect()
         const x = (e.clientX - rect.left - rect.width / 2) / rect.width
         const y = (e.clientY - rect.top - rect.height / 2) / rect.height
-
         profilePhoto.style.transform = `translate(${x * 20}px, ${y * 20}px) scale(1.05)`
       }
 
-      // Floating elements interaction
+      // Floating elements repel from cursor
       const floatingElements = document.querySelectorAll('.floating-element')
       floatingElements.forEach((el) => {
         const rect = el.getBoundingClientRect()
         const elX = rect.left + rect.width / 2
         const elY = rect.top + rect.height / 2
-        const distance = Math.sqrt(
-          Math.pow(e.clientX - elX, 2) + Math.pow(e.clientY - elY, 2)
-        )
+        const distance = Math.hypot(e.clientX - elX, e.clientY - elY)
 
         if (distance < 150) {
           const angle = Math.atan2(e.clientY - elY, e.clientX - elX)
           const force = (150 - distance) / 150
           el.style.transform = `translate(${Math.cos(angle) * force * 30}px, ${Math.sin(angle) * force * 30}px) scale(${1 + force * 0.2})`
+        } else {
+          el.style.transform = 'translate(0, 0) scale(1)'
         }
       })
     }
 
-    // Create particles
     const createParticle = () => {
       const particle = document.createElement('div')
       particle.className = 'particle'
@@ -64,33 +62,26 @@ const HeroSection = ({ scrollToSection }) => {
       }
     }
 
-    // Initialize particles
-    for (let i = 0; i < 30; i++) {
-      createParticle()
-    }
-
-    const particles = [...particlesRef.current]
+    for (let i = 0; i < 30; i++) createParticle()
 
     window.addEventListener('mousemove', handleMouseMove)
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
-      particles.forEach(particle => {
-        if (particle && particle.parentNode) {
-          particle.remove()
-        }
-      })
+      particlesRef.current.forEach(p => p?.remove())
+      particlesRef.current = []
     }
   }, [])
 
   return (
     <section id="home" className="section home-section" ref={heroRef}>
+      {/* Background Effects */}
       <div className="animated-bg"></div>
       <div className="gradient-orb orb-1"></div>
       <div className="gradient-orb orb-2"></div>
       <div className="gradient-orb orb-3"></div>
 
-      {/* Floating Elements */}
+      {/* Floating Decorative Elements */}
       <div className="floating-element floating-1"></div>
       <div className="floating-element floating-2"></div>
       <div className="floating-element floating-3"></div>
@@ -98,49 +89,60 @@ const HeroSection = ({ scrollToSection }) => {
 
       <div className="container">
         <div className="home-content">
-          <div className="profile-photo-container fade-in">
-            <div className="photo-glow"></div>
-            <div className="photo-ring"></div>
-            <img
-              src="/assets/image/profile.jpg"
-              alt="Profile"
-              className="profile-photo"
-              onError={(e) => {
-                e.target.style.display = 'none'
-                e.target.nextSibling.style.display = 'flex'
-              }}
-            />
-            <div className="profile-photo-placeholder" style={{ display: 'none' }}>
-              <span>Foto Profil</span>
+          {/* FOTO KIRI */}
+          <div className="hero-left">
+            <div className="profile-photo-container fade-in">
+              <div className="photo-glow"></div>
+              <div className="photo-ring"></div>
+              <img
+                src="/assets/image/profile1.jpg"
+                alt="Chelsia Nadia Sianipar"
+                className="profile-photo"
+                onError={(e) => {
+                  e.target.style.display = 'none'
+                  e.target.nextElementSibling.style.display = 'flex'
+                }}
+              />
+              <div className="profile-photo-placeholder" style={{ display: 'none' }}>
+                <span>CN</span>
+                <small>Chelsia Nadia</small>
+              </div>
             </div>
           </div>
-          <h1 className="home-title fade-in">
-            <span className="title-line">Building the future, I'm</span>
-            <span className="highlight typing-effect">Felix Natanael Butarbutar</span>
-          </h1>
-          <p className="home-subtitle fade-in">
-            <span className="subtitle-text">Full Stack Developer</span>
-          </p>
 
-          <div className="home-buttons fade-in">
-            <button
-              className="btn btn-primary pulse-on-hover"
-              onClick={() => scrollToSection('experience')}
-            >
-              <span>Lihat Projek</span>
-              <div className="btn-ripple"></div>
-            </button>
-            <button
-              className="btn btn-secondary pulse-on-hover"
-              onClick={() => scrollToSection('contact')}
-            >
-              <span>Hubungi Saya</span>
-              <div className="btn-ripple"></div>
-            </button>
-          </div>
-          <div className="scroll-indicator">
-            <div className="mouse"></div>
-            <div className="scroll-arrow"></div>
+          {/* TEKS KANAN */}
+          <div className="hero-right">
+            <h1 className="home-title fade-in">
+              <span className="title-line title-line-black">Building the future, I'm</span>
+              <span className="highlight typing-effect name-big">
+                Chelsia Nadia Sianipar
+              </span>
+            </h1>
+
+            <div className="profession-title fade-in">
+              Quality Assurance Engineer
+            </div>
+
+            <p className="home-subtitle fade-in">
+              Manual & Automation Testing
+            </p>
+
+            <div className="home-buttons fade-in">
+              <button
+                className="btn btn-primary pulse-on-hover"
+                onClick={() => scrollToSection('experience')}
+              >
+                <span>Lihat Projek</span>
+                <div className="btn-ripple"></div>
+              </button>
+              <button
+                className="btn btn-secondary pulse-on-hover"
+                onClick={() => scrollToSection('contact')}
+              >
+                <span>Hubungi Saya</span>
+                <div className="btn-ripple"></div>
+              </button>
+            </div>
           </div>
         </div>
       </div>

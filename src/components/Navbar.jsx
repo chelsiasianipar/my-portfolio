@@ -6,7 +6,7 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu, scrollToSection }) => {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo" onClick={() => scrollToSection('home')}>
-            <span className="logo-text">Felix Natanael</span>
+            <span className="logo-text">Chelsia Nadia </span>
             <span className="logo-dot">.</span>
           </div>
           

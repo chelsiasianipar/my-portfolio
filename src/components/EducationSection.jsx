@@ -6,28 +6,27 @@ const EDUCATION = [
     id: "itdel",
     title: "Institut Teknologi Del",
     date: "Aug 2023 — Sep 2026 (Expected)",
-    score: "IPK 3.35 / 4.00",
+    score: "IPK 3.06 / 4.00",
     location: "Laguboti, Toba, North Sumatra",
     degree: "Diploma — Information Technology",
     highlights: [
-      { icon: "📚", text: "Focus: Software Development & System Design" },
-      { icon: "🏆", text: "3rd Winner — Coding Day Competition 2025" }
+      { icon: "📚", text: "Focus: System Design & System Analyst" },
     ],
     logo: "/assets/image/logo1.jpg",
     chips: ["Diploma (D3)", "Active Student"]
   },
-  {
-    id: "sma",
-    title: "SMA Swasta Bintang Timur 1 Balige",
-    date: "Jul 2020 — Apr 2023",
-    score: null,
-    location: "Balige, Toba, North Sumatra",
-    degree: "Science Major",
-    highlights: [{ icon: "🔬", text: "Focus: Mathematics & Natural Sciences" }],
-    logo: "/assets/image/logo2.png",
-    chips: ["High School", "Science Major"]
-  }
-];
+    {
+      id: "sma",
+      title: "SMA Swasta Santa Maria Tarutung",
+      date: "Jul 2020 — Apr 2023",
+      score: null,
+      location: "Tarutung, Tapanuli Utara, North Sumatra",
+      degree: "Science Major",
+      highlights: [{ icon: "🔬", text: "Focus: Mathematics & Natural Sciences" }],
+      logo: "/assets/image/logo.JPG",
+      chips: ["High School", "Science Major"]
+    }
+  ];
 
 const EducationCard = ({ item, index }) => {
   return (

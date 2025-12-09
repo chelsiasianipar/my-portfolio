@@ -8,7 +8,7 @@ const SKILLS_DATA = [
     id: 'programming',
     title: 'Programming Languages',
     icon: 'Code',
-    tags: ['C', 'C#', 'PHP', 'Java', 'Python', 'Golang', 'JavaScript', 'TypeScript', 'Dart']
+    tags: ['Python', 'Javascript', 'PHP', 'Dart', 'C#', 'TypeScript', 'Golang', 'C']
   },
   {
     id: 'frameworks',
@@ -20,7 +20,7 @@ const SKILLS_DATA = [
     id: 'testing',
     title: 'Testing Tools',
     icon: 'Test',
-    tags: ['Manual Testing', 'Selenium', 'Katalon']
+    tags: ['Manual Testing', 'Selenium', 'Katalon', 'Cypress']
   },
   {
     id: 'database',

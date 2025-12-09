@@ -29,16 +29,20 @@ const AboutSection = () => {
           {/* LEFT */}
           <div className="about-left">
             <h3 className="about-title">About Me</h3>
-            <p className="about-sub">Developer • Problem solver • System thinker</p>
+            <p className="about-sub">System Analyst • Quality Assurance</p>
 
             <div className="about-body">
               <p>
-                Diploma (D3) Information Technology student at Institut Teknologi Del with hands-on experience as a Part-time
-                Web Developer at PT LPK Mori Silangit. Built and deployed a production-ready company profile and online student
-                registration system with multilingual support (Japanese, English, Indonesian) and responsive UI. Comfortable working
-                on both frontend and backend to turn business requirements into working features. Currently seeking a Software
-                Engineer Internship where I can contribute to real projects, improve my skills, and learn from experienced engineers,
-                and I am flexible to take on Backend, Frontend, or Fullstack Software Engineer intern roles.               </p>
+              I am interested in <strong>System Analysis</strong> and <strong>Quality Assurance</strong>, with experience in understanding user needs, mapping business processes, and translating them into clear system requirements.
+              </p>
+              <p>
+              I design and execute test cases, document testing results, and ensure that system features function properly and meet user expectations.
+              </p>
+              <p>
+              I am responsible, detail-oriented, and motivated to contribute effectively—both independently and within a team—to support the development of reliable and well-structured systems.
+              </p>
+
+
             </div>
 
             {/* CTA: Download CV */}
@@ -49,7 +53,7 @@ const AboutSection = () => {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Download CV Felix Natanael"
+                aria-label="Download CV Chelsia Nadia"
               >
                 <IconDownload />
                 <span>Download CV</span>
@@ -63,9 +67,9 @@ const AboutSection = () => {
           <aside className="about-right" aria-label="Kontak dan profil">
             <div className="profile" role="article" aria-label="Profil singkat">
               <div className="profile-meta">
-                <div className="profile-name">Felix Natanael Butarbutar</div>
-                <div className="profile-role">Full-Stack Developer</div>
-                <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 6 }}>Focused on scalable web & mobile systems</div>
+                <div className="profile-name">Chelsia Nadia Sianipar</div>
+                <div className="profile-role">System Analyst • Quality Assurance</div>
+                <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 6 }}>Focused on System Analyst and Quality Assurance</div>
               </div>
             </div>
 
@@ -73,7 +77,7 @@ const AboutSection = () => {
               <div className="contact-icon" aria-hidden>📞</div>
               <div className="contact-info">
                 <div className="contact-label">Telepon</div>
-                <div className="contact-value">+62 851-4223-2595</div>
+                <div className="contact-value">+62 821-2405-0196</div>
               </div>
             </a>
 
@@ -81,17 +85,18 @@ const AboutSection = () => {
               <div className="contact-icon" aria-hidden style={{ background: "linear-gradient(90deg,#06b6d4,#3b82f6)" }}>✉️</div>
               <div className="contact-info">
                 <div className="contact-label">Email</div>
-                <div className="contact-value">felixnatb@gmail.com</div>
+                <div className="contact-value">chelsiasianipar@gmail.com</div>
               </div>
             </a>
 
-            <a className="contact-card" href="https://felixnatanael.my.id" target="_blank" rel="noreferrer">
+              <a className="contact-card" href="https://chelsia.my.id" target="_blank" rel="noreferrer">
               <div className="contact-icon" aria-hidden style={{ background: "linear-gradient(90deg,#111827,#374151)" }}>🔗</div>
               <div className="contact-info">
-                <div className="contact-label">Portfolio</div>
-                <div className="contact-value">felixnatanael.my.id</div>
-              </div>
+                <div className="contact-label">Portofolio</div>
+                <div className="contact-value">chelsia.my.id</div>
+             </div>
             </a>
+
 
             <div className="contact-card">
               <div className="contact-icon" aria-hidden style={{ background: "linear-gradient(90deg,#ef4444,#fb923c)" }}>📍</div>

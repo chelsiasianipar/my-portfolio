@@ -1,761 +1,333 @@
-/* Hero Section Base Styles - Professional Dark Theme */
+/* ====================================
+   HERO SECTION - FINAL STYLES
+   - Foto agak ke kiri, teks kanan
+   - Animasi tetap hidup
+   - Tagline hitam, highlight putih, name-big hitam & besar
+   - Buttons kontras agar terlihat di background putih
+   ==================================== */
+
+/* ---------- Root section ---------- */
 .home-section {
   min-height: 100vh;
   padding: 6rem 2rem 4rem;
   display: flex;
   align-items: center;
   position: relative;
-  background: #0a0a0a;
-  color: #ffffff;
-  text-align: center;
+  background: #ffffff; /* putih */
+  color: #000; /* default teks hitam */
   overflow: hidden;
 }
 
-/* Animated Background - Subtle Grid */
+/* ---------- Animated Background - Subtle Grid ---------- */
 .animated-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: gridMove 20s linear infinite;
   pointer-events: none;
 }
-
 @keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
+  0% { transform: translate(0,0); }
+  100% { transform: translate(50px,50px); }
 }
 
-/* Gradient Orbs - Monochrome Professional */
+/* ---------- Gradient Orbs (subtle) ---------- */
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
   pointer-events: none;
-  opacity: 0.15;
+  opacity: 0.12;
   animation: orbFloat 25s ease-in-out infinite;
 }
-
-.orb-1 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-  top: -20%;
-  left: -10%;
-  animation-delay: 0s;
-}
-
-.orb-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-  bottom: -10%;
-  right: -5%;
-  animation-delay: 8s;
-}
-
-.orb-3 {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
-  top: 50%;
-  right: 25%;
-  animation-delay: 16s;
-}
-
+.orb-1 { width:600px; height:600px; background:radial-gradient(circle,rgba(0,0,0,0.06)0%,transparent 70%); top:-20%; left:-10%; }
+.orb-2 { width:500px; height:500px; background:radial-gradient(circle,rgba(0,0,0,0.05)0%,transparent 70%); bottom:-10%; right:-5%; animation-delay:8s; }
+.orb-3 { width:550px; height:550px; background:radial-gradient(circle,rgba(0,0,0,0.04)0%,transparent 70%); top:50%; right:25%; animation-delay:16s; }
 @keyframes orbFloat {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(40px, -40px) scale(1.1);
-  }
-  66% {
-    transform: translate(-30px, 30px) scale(0.95);
-  }
+  0%,100% { transform:translate(0,0) scale(1); }
+  33% { transform:translate(40px,-40px) scale(1.05); }
+  66% { transform:translate(-30px,30px) scale(0.98); }
 }
 
-/* Particles - Minimalist */
+/* ---------- Particles ---------- */
 .particle {
   position: absolute;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(0,0,0,0.06);
   border-radius: 50%;
   pointer-events: none;
   animation: particleFloat linear infinite;
 }
-
 @keyframes particleFloat {
-  0% {
-    transform: translateY(100vh) translateX(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-100px) translateX(100px) rotate(360deg);
-    opacity: 0;
-  }
+  0% { transform:translateY(100vh) translateX(0) rotate(0deg); opacity:0; }
+  10% { opacity:0.5; }
+  90% { opacity:0.5; }
+  100% { transform:translateY(-100px) translateX(100px) rotate(360deg); opacity:0; }
 }
 
-/* Floating Elements - Clean Geometric */
-.floating-element {
-  position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  pointer-events: none;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.02);
-}
+/* ---------- Floating Decorative Elements ---------- */
+.floating-element { position:absolute; border:1px solid rgba(0,0,0,0.06); pointer-events:none; background:rgba(0,0,0,0.01); }
+.floating-1 { width:120px; height:120px; top:15%; left:8%; border-radius:20px; transform:rotate(45deg); animation:floatSquare 20s ease-in-out infinite; }
+.floating-2 { width:80px; height:80px; bottom:20%; left:15%; border-radius:50%; animation:floatCircle 15s ease-in-out infinite; }
+.floating-3 { width:100px; height:100px; top:60%; right:12%; border-radius:15px; animation:floatRect 18s ease-in-out infinite; }
+.floating-4 { width:60px; height:60px; top:10%; right:18%; clip-path:polygon(50% 0%,100% 100%,0% 100%); animation:floatTriangle 16s ease-in-out infinite; }
 
-.floating-1 {
-  width: 120px;
-  height: 120px;
-  top: 15%;
-  left: 8%;
-  border-radius: 20px;
-  transform: rotate(45deg);
-  animation: floatSquare 20s ease-in-out infinite;
-}
+@keyframes floatSquare { 0%,100%{transform:translate(0,0) rotate(45deg);} 50%{transform:translate(30px,-30px) rotate(225deg);} }
+@keyframes floatCircle { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-25px,-35px);} }
+@keyframes floatRect { 0%,100%{transform:translate(0,0) rotate(0deg);} 50%{transform:translate(20px,-40px) rotate(180deg);} }
+@keyframes floatTriangle { 0%,100%{transform:translate(0,0) rotate(0deg);} 50%{transform:translate(-30px,-25px) rotate(180deg);} }
 
-.floating-2 {
-  width: 80px;
-  height: 80px;
-  bottom: 20%;
-  left: 15%;
-  border-radius: 50%;
-  animation: floatCircle 15s ease-in-out infinite;
-}
-
-.floating-3 {
-  width: 100px;
-  height: 100px;
-  top: 60%;
-  right: 12%;
-  border-radius: 15px;
-  animation: floatRect 18s ease-in-out infinite;
-}
-
-.floating-4 {
-  width: 60px;
-  height: 60px;
-  top: 10%;
-  right: 18%;
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-  animation: floatTriangle 16s ease-in-out infinite;
-}
-
-@keyframes floatSquare {
-  0%, 100% { transform: translate(0, 0) rotate(45deg); }
-  50% { transform: translate(30px, -30px) rotate(225deg); }
-}
-
-@keyframes floatCircle {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-25px, -35px); }
-}
-
-@keyframes floatRect {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(20px, -40px) rotate(180deg); }
-}
-
-@keyframes floatTriangle {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-30px, -25px) rotate(180deg); }
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
+/* ---------- Layout ---------- */
+.container { max-width:1400px; margin:0 auto; width:100%; padding: 0 1rem; }
 .home-content {
-  max-width: 900px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  flex-wrap: wrap;
   position: relative;
   z-index: 10;
 }
 
-/* Profile Photo Container - Minimalist Professional */
-.profile-photo-container {
-  margin-bottom: 3rem;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  animation: fadeInUp 1s ease;
-}
-
-.photo-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
-  animation: pulse-glow 4s ease-in-out infinite;
-  z-index: -1;
-  filter: blur(40px);
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.5;
-  }
-}
-
-.photo-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  animation: rotateRing 30s linear infinite;
-  z-index: -1;
-}
-
-.photo-ring::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-}
-
-.photo-ring::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  right: 30%;
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-}
-
-@keyframes rotateRing {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-.profile-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(255, 255, 255, 0.1);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: float-photo 5s ease-in-out infinite;
-  position: relative;
-  z-index: 1;
-  filter: grayscale(20%) contrast(1.1);
-}
-
-@keyframes float-photo {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.profile-photo:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 
-    0 30px 80px rgba(0, 0, 0, 0.6),
-    0 0 50px rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-  filter: grayscale(0%) contrast(1.15);
-}
-
-.profile-photo-placeholder {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.3);
+/* ---------- Left: Photo ---------- */
+.hero-left {
+  flex: 0 0 auto;
+  min-width: 300px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #1a1a1a;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.5),
-    inset 0 0 30px rgba(255, 255, 255, 0.03);
+  justify-content: flex-start;
+  align-items: flex-start;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+@media (max-width: 992px) {
+  .hero-left {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
 }
 
-.profile-photo-placeholder span {
+/* ---------- Right: Text ---------- */
+.hero-right {
+  flex: 1.6;
+  text-align: left;
+  animation: fadeInUp 1s ease 0.4s both;
+}
+@media (max-width: 992px) { .hero-right { text-align:center; } }
+
+/* ---------- Photo Effects ---------- */
+.profile-photo-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* pastikan foto di kiri */
+  align-items: center;
+  width: 100%;
+  max-width: 420px; /* batasi supaya tidak meledak di layar besar */
+  padding-left: 6px;
+  z-index: 12;
+}
+.profile-photo {
+  width:200px; height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(0,0,0,0.06);
+  box-shadow:0 20px 60px rgba(0,0,0,0.12);
+  transition:all .5s cubic-bezier(.4,0,.2,1);
+  animation:float-photo 5s ease-in-out infinite;
+  filter:grayscale(12%) contrast(1.05);
+}
+.profile-photo:hover { transform:translateY(-10px) scale(1.04); box-shadow:0 30px 80px rgba(0,0,0,0.15); border-color:rgba(0,0,0,0.08); filter:grayscale(0%); }
+
+@keyframes pulse-glow { 0%,100%{transform:translate(-50%,-50%) scale(1); opacity:.25;} 50%{transform:translate(-50%,-50%) scale(1.06); opacity:.4;} }
+@keyframes rotateRing { from{transform:translate(-50%,-50%) rotate(0deg);} to{transform:translate(-50%,-50%) rotate(360deg);} }
+@keyframes float-photo { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+/* ---------- Title & Name ---------- */
+.home-title {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  opacity: 0.9;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.15;
 }
 
-.profile-photo-placeholder small {
-  font-size: 0.7rem;
-  opacity: 0.6;
-  line-height: 1.4;
-}
-
-/* Typography - Clean Professional */
-.home-title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  animation: fadeInUp 1s ease 0.2s both;
-  font-weight: 200;
-  letter-spacing: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
+/* tagline (the "Building the future, I'm") - keep black */
 .title-line {
   display: block;
-  animation: slideInLeft 1s ease 0.3s both;
-  font-size: 1rem;
-  opacity: 0.7;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  color: #000;
   text-transform: uppercase;
-  letter-spacing: 8px;
-  font-weight: 300;
+  letter-spacing: 2.5px;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
+/* highlight (the small label above name) - keep WHITE as requested */
 .highlight {
-  color: #ffffff;
+  display: block;
+  font-size: 0.95rem;
   font-weight: 700;
-  position: relative;
-  display: inline-block;
-  animation: slideInRight 1s ease 0.5s both;
-  letter-spacing: 2px;
+  color: #ffffff !important; /* putih */
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.55) !important; /* memastikan terbaca di atas elemen */
 }
 
+/* underline small bar for highlight */
 .highlight::after {
   content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
+  display: block;
+  width: 80px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.8);
-  animation: expandLine 1s ease 0.8s both;
+  background: rgba(255,255,255,0.95) !important;
+  margin-top: 8px;
 }
 
-@keyframes expandLine {
-  from {
-    width: 0;
-    left: 50%;
-  }
-  to {
-    width: 100%;
-    left: 0;
-  }
+/* name-big (main name) - BLACK and larger per request */
+.name-big {
+  display: block !important;
+  font-size: clamp(5.5rem, 12vw, 13rem) !important; /* lebih besar */
+  font-weight: 900 !important;
+  line-height: 0.9 !important;
+  margin-top: 0.6rem !important;
+  color: #000 !important; /* hitam */
+  -webkit-text-fill-color: #000 !important;
+  background: none !important;
+  text-shadow: 0 8px 25px rgba(0,0,0,0.18) !important;
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+/* small typing-effect compatibility */
+.highlight.typing-effect { font-size: inherit !important; }
 
-.typing-effect::before {
-  content: '';
-  position: absolute;
-  right: -3px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: rgba(255, 255, 255, 0.8);
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
-}
-
-.home-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.7;
-  animation: fadeInUp 1s ease 0.4s both;
-  font-weight: 300;
-  letter-spacing: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  text-transform: uppercase;
-}
-
-.subtitle-text {
-  display: inline-block;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.subtitle-text::before {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.6);
-  transition: width 0.3s ease;
-}
-
-.subtitle-text:hover {
-  opacity: 1;
-  transform: translateY(-3px);
-}
-
-.subtitle-text:hover::before {
-  width: 100%;
-}
-
-/* Buttons - Professional Minimal */
-.home-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
+/* ---------- Profession Title ---------- */
+.profession-title {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #000;
+  margin: 0.8rem 0 1.6rem 0;
+  letter-spacing: 1px;
   animation: fadeInUp 1s ease 0.6s both;
-  flex-wrap: wrap;
+  text-align: left;
+  opacity: 0.95;
 }
+
+/* ---------- Subtitle / Skills ---------- */
+.home-subtitle {
+  font-size: 0.95rem;
+  margin: 2rem 0 3rem;
+  opacity: 0.75;
+  font-weight: 300;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #000 !important;
+}
+
+/* ---------- Buttons (visible on white background) ---------- */
+.home-buttons { display:flex; gap:1.25rem; flex-wrap:wrap; align-items:center; }
+@media (max-width:992px) { .home-buttons { justify-content:center; } }
 
 .btn {
-  padding: 1rem 2.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  overflow: hidden;
+  padding: .85rem 1.75rem;
+  font-size:0.95rem;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  transition:all .28s cubic-bezier(.4,0,.2,1);
+  text-decoration:none;
+  display:inline-block;
+  text-transform:uppercase;
+  letter-spacing:1.6px;
+  position:relative;
+  overflow:hidden;
+  border-radius:8px;
 }
 
-.btn span {
-  position: relative;
-  z-index: 2;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1;
-}
-
-.btn:hover::before {
-  left: 100%;
-}
-
-.btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #ffffff;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn:hover::after {
-  width: 100%;
-}
-
+/* Primary = filled black */
 .btn-primary {
-  background: #ffffff;
-  color: #0a0a0a;
-  border: 2px solid #ffffff;
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #000 !important;
 }
 
+/* Primary hover = invert */
 .btn-primary:hover {
-  background: transparent;
-  color: #ffffff;
+  background: transparent !important;
+  color: #000 !important;
+  border-color: #000 !important;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
 }
 
-.btn-primary:active {
-  transform: translateY(-1px);
-}
-
+/* Secondary = outline black */
 .btn-secondary {
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: transparent !important;
+  color: #000 !important;
+  border: 2px solid #000 !important;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #ffffff;
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #000 !important;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
 }
 
-.btn-secondary:active {
-  transform: translateY(-1px);
-}
+/* small ripple visual placeholder (if JS adds .btn-ripple) */
+.btn .btn-ripple { position:absolute; left:0; top:0; right:0; bottom:0; pointer-events:none; }
 
-.btn-ripple {
-  display: none;
-}
-
-/* Scroll Indicator - Minimalist */
+/* ---------- Scroll Indicator ---------- */
 .scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  animation: fadeInUp 1s ease 0.8s both;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  animation:fadeInUp 1s ease 0.8s both;
+  opacity:0.7;
+  transition:opacity .3s;
+  cursor:pointer;
 }
+.scroll-indicator:hover { opacity:1; }
 
-.scroll-indicator:hover {
-  opacity: 1;
+.mouse { width:26px; height:45px; border:2px solid rgba(0,0,0,0.5); border-radius:13px; position:relative; }
+.mouse::before { content:''; position:absolute; top:8px; left:50%; transform:translateX(-50%); width:3px; height:8px; background:rgba(0,0,0,0.6); border-radius:2px; animation:scroll-mouse 2s infinite; }
+.scroll-arrow { width:16px; height:16px; border-right:2px solid rgba(0,0,0,0.5); border-bottom:2px solid rgba(0,0,0,0.5); transform:rotate(45deg); animation:scroll-arrow 2s infinite; }
+
+@keyframes scroll-mouse { 0%{opacity:1; transform:translateX(-50%) translateY(0);} 100%{opacity:0; transform:translateX(-50%) translateY(16px);} }
+@keyframes scroll-arrow { 0%,100%{opacity:0.4; transform:rotate(45deg) translateY(0);} 50%{opacity:1; transform:rotate(45deg) translateY(-8px);} }
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp { from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 992px) {
+  .home-content { flex-direction:column; text-align:center; gap:3.5rem; }
+  .home-title { font-size: 1.8rem; text-align:center; }
+  .title-line { font-size: 0.85rem; }
+  .name-big { font-size: clamp(4rem, 10vw, 9rem) !important; margin-top: 0.6rem !important; }
+  .profession-title { font-size:1.1rem; text-align:center; }
 }
-
-.mouse {
-  width: 26px;
-  height: 45px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 13px;
-  position: relative;
-}
-
-.mouse::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 2px;
-  animation: scroll-mouse 2s infinite;
-}
-
-@keyframes scroll-mouse {
-  0% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(16px);
-  }
-}
-
-.scroll-arrow {
-  width: 16px;
-  height: 16px;
-  border-right: 2px solid rgba(255, 255, 255, 0.4);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-  transform: rotate(45deg);
-  animation: scroll-arrow 2s infinite;
-}
-
-@keyframes scroll-arrow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: rotate(45deg) translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: rotate(45deg) translateY(-8px);
-  }
-}
-
-/* Fade In Animations */
-.fade-in {
-  animation: fadeInUp 1s ease both;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .home-title {
-    font-size: 2.5rem;
-  }
-  
-  .title-line {
-    font-size: 1.8rem;
-    letter-spacing: 4px;
-  }
-  
-  .home-subtitle {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-  }
-  
-  .profile-photo,
-  .profile-photo-placeholder {
-    width: 170px;
-    height: 170px;
-  }
-  
-  .photo-ring {
-    width: 210px;
-    height: 210px;
-  }
-  
-  .photo-glow {
-    width: 230px;
-    height: 230px;
-  }
-  
-  .home-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .btn {
-    width: 100%;
-    padding: 0.875rem 2rem;
-  }
-  
-  .floating-element {
-    opacity: 0.3;
-  }
-  
-  .gradient-orb {
-    filter: blur(80px);
-    opacity: 0.1;
-  }
+  .home-title { font-size: 1.6rem; }
+  .name-big { font-size: clamp(3rem, 9.5vw, 6rem) !important; }
+  .profession-title { font-size:1rem; }
+  .profile-photo { width:180px; height:180px; }
+  .photo-ring, .photo-glow { width:220px; height:220px; }
 }
-
 @media (max-width: 480px) {
-  .home-section {
-    padding: 4rem 1rem 2rem;
-  }
-  
-  .home-title {
-    font-size: 2rem;
-  }
-  
-  .title-line {
-    font-size: 1.4rem;
-    letter-spacing: 3px;
-  }
-  
-  .highlight {
-    font-size: 1.6rem;
-  }
-  
-  .home-subtitle {
-    font-size: 1rem;
-  }
-  
-  .profile-photo,
-  .profile-photo-placeholder {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .photo-ring {
-    width: 190px;
-    height: 190px;
-  }
-  
-  .photo-glow {
-    width: 210px;
-    height: 210px;
-  }
-  
-  .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .scroll-indicator {
-    bottom: 30px;
-  }
+  .home-section { padding:4rem 1rem 2rem; }
+  .home-title { font-size: 1.4rem; }
+  .profession-title { font-size:0.95rem; margin:0.8rem 0 1.5rem; }
+  .home-subtitle { font-size: 0.82rem; opacity: 0.9; }
+  .home-buttons { flex-direction:column; align-items:center; }
+  .btn { width:100%; max-width:320px; }
 }
