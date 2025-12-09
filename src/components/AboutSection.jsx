@@ -73,7 +73,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <a className="contact-card" href="tel:+6285142232595">
+            <a className="contact-card" href="tel:+6282124050196">
               <div className="contact-icon" aria-hidden>📞</div>
               <div className="contact-info">
                 <div className="contact-label">Telepon</div>
@@ -81,7 +81,7 @@ const AboutSection = () => {
               </div>
             </a>
 
-            <a className="contact-card" href="mailto:felixnatb@gmail.com">
+            <a className="contact-card" href="mailto:chelsiasianipar@gmail.com">
               <div className="contact-icon" aria-hidden style={{ background: "linear-gradient(90deg,#06b6d4,#3b82f6)" }}>✉️</div>
               <div className="contact-info">
                 <div className="contact-label">Email</div>
