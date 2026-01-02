@@ -1,103 +1,101 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Import components
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import AboutSection from './components/AboutSection'
-import SkillsSection from './components/SkillsSection'
-import ExperienceSection from './components/ExperienceSection'
-// import GallerySection from './components/GallerySection'
-// import ProjectsSection from './components/ProjectsSection'
-import EducationSection from './components/EducationSection'
-// import OrganizationSection from './components/OrganizationSection'
-// import HighlightsSection from './components/HighlightsSection'
-import ContactSection from './components/ContactSection'
-import CertificateSection from './components/CertificateSection'
-import Footer from './components/Footer'
+// Components (HOME PAGE)
+import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
+import SkillsSection from "./components/SkillsSection";
+import ExperienceSection from "./components/ExperienceSection";
+import EducationSection from "./components/EducationSection";
+import ContactSection from "./components/ContactSection";
+import CertificateSection from "./components/CertificateSection";
+import Footer from "./components/Footer";
 
-function App() {
-  const [activeSection, setActiveSection] = useState('home')
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const observerRef = useRef(null)
+// Detail page
+import ExperienceDetail from "./components/ExperienceDetail";
+
+/* =========================
+   HOME PAGE (ONE PAGE SCROLL)
+========================= */
+function HomePage() {
+  const [activeSection, setActiveSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const observerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'gallery', 'projects', 'education', 'organization', 'highlights','certificates', 'contact']
-      const scrollPosition = window.scrollY + 100
+      const sections = [
+        "home",
+        "about",
+        "skills",
+        "experience",
+        "education",
+        "certificates",
+        "contact",
+      ];
+
+      const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
           }
         }
       }
-    }
+    };
 
-    // Intersection Observer untuk animasi scroll
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in')
+            entry.target.classList.add("animate-in");
           }
-        })
+        });
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-      }
-    )
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+    );
 
-    // Observe semua elemen yang perlu di-animate
-    const elementsToObserve = document.querySelectorAll('.fade-in, .slide-up, .skill-card, .project-card, .gallery-item')
-    elementsToObserve.forEach((el) => observerRef.current.observe(el))
+    const elements = document.querySelectorAll(
+      ".fade-in, .slide-up, .skill-card, .project-card"
+    );
+    elements.forEach((el) =>
+      observerRef.current.observe(el)
+    );
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-      if (observerRef.current) {
-        observerRef.current.disconnect()
-      }
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+      observerRef.current?.disconnect();
+    };
+  }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isMenuOpen])
+    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
+    return () => (document.body.style.overflow = "unset");
+  }, [isMenuOpen]);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      setIsMenuOpen(false)
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
     }
-  }
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  };
 
   return (
     <div className="app">
-      {/* Custom Cursor */}
-      <div className="custom-cursor"></div>
-
-      <Navbar 
+      <Navbar
         activeSection={activeSection}
         isMenuOpen={isMenuOpen}
-        toggleMenu={toggleMenu}
+        toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
         scrollToSection={scrollToSection}
       />
 
@@ -105,15 +103,26 @@ function App() {
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />
-      {/* <ProjectsSection /> */}
       <EducationSection />
-      {/* <OrganizationSection />
-      <HighlightsSection /> */}
-      <ContactSection />
       <CertificateSection />
-      <Footer /> 
+      <ContactSection />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+/* =========================
+   APP WITH ROUTER
+========================= */
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:id" element={<ExperienceDetail />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
